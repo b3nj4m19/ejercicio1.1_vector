@@ -1,0 +1,96 @@
+#include <iostream>
+#include <stdlib.h>
+#include <math.h>
+
+using namespace std;
+
+class point
+{
+private:  //*atributo*//
+    int x;
+    int y;
+    int z;
+public:   //*metodo*//
+    point(int  , int , int ); //*constructor*//
+
+    void asignarX();
+
+    void asignarY();
+
+    void asignarZ();
+
+    void negativeX();
+    void negativeY();
+    void negativeZ();
+
+    void norm();
+
+};
+ point::point(int _x, int _y, int _z)
+ {
+     x=_x;
+     y=_y;
+     z=_z;
+ }
+ void point::asignarX()
+ {
+     cout<< "el valor de x es: "<< x << endl;
+ }
+ void point::asignarY()
+ {
+     cout<< "el valor de y es: "<< y << endl;
+ }
+ void point::asignarZ()
+ {
+     cout<< "el valor de z es: "<< z << endl;
+ }
+void point::negativeX()
+{
+
+    cout<<"ahora el valor de x es:"<< x << endl;
+}
+void point::negativeY()
+{
+
+    cout<<"ahora el valor de y es:"<< y << endl;
+}
+void point::negativeZ()
+{
+    cout<<"ahora el valor de z es:"<< z << endl;
+}
+
+void point::norm()
+{
+    float norma;
+
+    norma=(sqrt(pow(x,2)+pow(y,2)+pow(z,2)));
+
+    cout<<"la norma del vector es:"<<norma<<endl;
+}
+int main()
+{
+    int x,y,z;
+    cout<< "ingresa el valor de x"<<endl;
+    cin>>x;
+    cout<< "ingresa el valor de y"<<endl;
+    cin>>y;
+    cout<< "ingresa el valor de z"<<endl;
+    cin>>z;
+
+    point coordenada= point(x,y,z);
+    coordenada.asignarX();
+    coordenada.asignarY();
+    coordenada.asignarZ();
+
+    point coordenadasNegativas=point(-x,-y,-z);
+    coordenadasNegativas.negativeX();
+    coordenadasNegativas.negativeY();
+    coordenadasNegativas.negativeZ();
+
+    point normaVector=point (x,y,z);
+    normaVector.norm();
+
+
+
+    return 0;
+}
